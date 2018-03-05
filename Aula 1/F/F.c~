@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main () {
+	int jogadores, rodadas, *pontos, i, k = 0, pos = 0, best, pos_best;
+	scanf("%d %d", &jogadores, &rodadas);
+	pontos = malloc (jogadores * sizeof (int));
+	
+	for (i = 0; i < jogadores; i++)
+		pontos[i] = 0;
+	
+	while (k != jogadores * rodadas) {
+		scanf("%d", &i);
+		pontos[pos] += i;
+		pos++;
+		if (pos == jogadores)
+			pos = 0;
+		k++;
+	}
+	
+	best = pontos[0];
+	pos_best = 0;
+	for (i = 1; i < jogadores; i++) {
+		if (pontos[i]>= best) {
+			pos_best = i;
+			best = pontos[i];
+		}
+	}
+	
+	printf("%d\n", pos_best + 1);
+	
+	return 0;
+}
+		
+		
+		
+	

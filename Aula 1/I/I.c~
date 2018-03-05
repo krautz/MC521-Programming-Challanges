@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct Fila {
+	int prioridade;
+	char impressao_desejada;
+	struct Fila *next;
+} fila;
+
+int main () {
+	int numero_casos, numero_impressoes, posicao_impressao, i;
+	fila *cabeca, *aux;
+	cabeca = malloc (sizeof (fila));
+	cabeca->prioridade = -1;
+	cabeca->next = NULL;
+	
+	scanf("%d", &numero_casos);
+	while (numero_casos != 0) {
+		scanf("%d %d", &numero_impressoes, &posicao_impressao);
+		for (i = 0; i < numero_impressoes; i++) {
+			fila *no;
+			no = malloc (sizeof(fila));
+			scanf("%d", &no->prioridade);
+			if (posicao_impressao == 0) {
+				no->impressao_desejada = 'T';
+			} else {
+				no->impressao_desejada = 'F';
+			}
+			posicao_impressao--;
+			no->next = NULL;
+			
+			aux = cabeca;
+			while (aux->next != NULL) {
+				aux = aux->next;
+			}
+			aux->next = no;
+		}
+		aux = cabeca->next;
+		while (aux != NULL) {
+			printf("%d %c, ", aux->prioridade, aux->impressao_desejada);
+			aux = aux->next;
+		}
+		printf("\n");'
+	}
+			
+	
+	
+
+
+
+return 0;
+}
