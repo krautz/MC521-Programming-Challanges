@@ -82,12 +82,12 @@ long int count_repeticoes (long int arr[], int ini, int fim, long int val, long 
 	int i = pos - 1;
 	long int count = 1;
 	
-	while (arr[pos] == arr[i]) {
+	while (i >= ini && arr[pos] == arr[i]) {
 		i--;
 		count++;
 	}
 	i = pos + 1;
-	while (arr[pos] == arr[i]) {
+	while (i <= fim && arr[pos] == arr[i]) {
 		i++;
 		count++;
 	}
