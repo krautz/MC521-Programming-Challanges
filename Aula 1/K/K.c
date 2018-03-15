@@ -1,3 +1,5 @@
+/* not correct, it only works for simple polygons*/
+
 #include <stdio.h>
 #include <stdlib.h>
 

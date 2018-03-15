@@ -1,3 +1,5 @@
+/* correct, but no efficient enough */
+
 #include <stdio.h>
 #include <stdlib.h>
 
