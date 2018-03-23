@@ -7,55 +7,51 @@
 
 using namespace std;
 
-long int acha_maior_soma (vector <long int> &vetor, long int pos) {
-	long int i, a, b;
+void acha_maior_linha (vector <long long int> &linha, long long int colunas) {
+	long long int k;
+	if (colunas == 2) {
+		if (linha[1] > linha[0]) {
+			linha[0] = linha[1];
+		}
+	} else if (colunas > 2) {
+		if (linha[colunas - 1] > linha[colunas - 2]) {
+			linha[colunas - 2] = linha[colunas - 1];
+		}
+		for (k = colunas - 3; k >= 0; k--) {
+			if (linha[k] + linha[k + 2] > linha[k + 1]) {
+				linha[k] = linha[k] + linha[k + 2];
+			} else {
+				linha[k] = linha[k + 1];
+			}
 	
-	if (pos >= vetor.size()) {
-		return -1;
-	} else if (pos + 1 == vetor.size() || pos + 2 == vetor.size()) {
-		return vetor[pos];
+		}
 	}
+}
 	
-	a = acha_maior_soma (vetor, pos + 2);
-	b = acha_maior_soma (vetor, pos + 3);
-	if (a > b) {
-		return a + vetor[pos];
-	} else {
-		return b + vetor[pos];
-	}
-} 
 
 int main () {
 
-	long int linhas, colunas, a, b, i, j;
+	long long int linhas, colunas, a, b, i, j;
 	
 	cin >> linhas;
 	cin >> colunas;
 	
 	while (linhas != 0 && colunas != 0) {
-		vector <long int> maiores (linhas);
+		vector <long long int> maiores (linhas);
 		
 		for (i = 0; i < linhas; i++) {
-			vector <long int> linha_atual (colunas);
+			vector <long long int> linha_atual (colunas);
 			for (j = 0; j < colunas; j++) {
 				cin >> linha_atual[j];
 			}
-			a = acha_maior_soma (linha_atual, 0);
-			b = acha_maior_soma (linha_atual, 1);
-			if (a > b) {
-				maiores[i] = a;
-			} else {
-				maiores[i] = b;
-			}
+			acha_maior_linha (linha_atual, colunas);
+			maiores[i] = linha_atual[0];
 		}
 		
-		a = acha_maior_soma (maiores, 0);
-		b = acha_maior_soma (maiores, 1);
-		if (a > b) {
-			cout << a << "\n";
-		} else {
-			cout << b << "\n";
-		}
+		acha_maior_linha (maiores, linhas);
+		
+		cout << maiores[0] << "\n";
+		
 		cin >> linhas;
 		cin >> colunas;
 	}
