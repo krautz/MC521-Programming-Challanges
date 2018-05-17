@@ -91,7 +91,8 @@ bool e_dialogo () {
 }
 
 int main () {
-    lli test_cases;
+    lli test_cases, pos;
+    bool check, ja_achei;
 
     cin >> test_cases;
 
@@ -101,7 +102,99 @@ int main () {
         dialogo.clear();
         getline (cin, dialogo);
         pos = 0;
-        if (e_dialogo())
+        ja_achei = true;
+        while (ja_achei && pos < dialogo.size()) {
+            ja_achei = false;
+
+            if (dialogo[pos] == 'o' && ja_achei == false)
+                if (pos + 1 < dialogo.size() && dialogo[pos+1] == 'u')
+                    if (pos + 2 < dialogo.size() && dialogo[pos+2] == 't')
+                        if (pos + 3 < dialogo.size() && dialogo[pos+3] == 'p')
+                            if (pos + 4 < dialogo.size() && dialogo[pos+4] == 'u')
+                                if (pos + 5 < dialogo.size() && dialogo[pos+5] == 't')
+                                    if (pos + 6 < dialogo.size() && dialogo[pos+6] == 'o') {
+                                        if (pos + 7 < dialogo.size() && dialogo[pos+7] == 'n') {
+                                            if (pos + 8 < dialogo.size() && dialogo[pos+8] == 'e') {
+                                                ja_achei = true;
+                                                pos += 9;
+                                                //cout << "entrei output one" << endl;
+                                            } else {
+                                                ja_achei = true;
+                                                pos += 8;
+                                                //cout << "entrei out puton" << endl;
+                                            }
+                                        } else {
+                                            ja_achei = true;
+                                            pos += 6;
+                                            //cout << "entrei output" << endl;
+                                        }
+                                    } else {
+                                        ja_achei = true;
+                                        pos += 6;
+                                        //cout << "entrei output" << endl;
+                                    }
+
+            if (dialogo[pos] == 'i' && ja_achei == false)
+                if (pos + 1 < dialogo.size() && dialogo[pos+1] == 'n')
+                    if (pos + 2 < dialogo.size() && dialogo[pos+2] == 'p')
+                        if (pos + 3 < dialogo.size() && dialogo[pos+3] == 'u')
+                            if (pos + 4 < dialogo.size() && dialogo[pos+4] == 't')
+                                if (pos + 5 < dialogo.size() && dialogo[pos+5] == 'o') {
+                                    if (pos + 6 < dialogo.size() && dialogo[pos+6] == 'n') {
+                                        if (pos + 7 < dialogo.size() && dialogo[pos+7] == 'e') {
+                                            ja_achei = true;
+                                            pos += 8;
+                                            //cout << "entrei input one" << endl;
+                                        } else {
+                                            ja_achei = true;
+                                            pos += 7;
+                                            //cout << "entrei in puton" << endl;
+                                        }
+                                    } else {
+                                        ja_achei = true;
+                                        pos += 5;
+                                        //cout << "entrei input" << endl;
+                                    }
+                                } else {
+                                    ja_achei = true;
+                                    pos += 5;
+                                    //cout << "entrei input" << endl;
+                                }
+
+            if (dialogo[pos] == 'i' && ja_achei == false)
+                if (pos + 1 < dialogo.size() && dialogo[pos+1] == 'n') {
+                    ja_achei = true;
+                    pos += 2;
+                    //cout << "entrei in" << endl;
+                }
+
+            if (dialogo[pos] == 'o' && ja_achei == false)
+                if (pos + 1 < dialogo.size() && dialogo[pos+1] == 'u')
+                    if (pos + 2 < dialogo.size() && dialogo[pos+2] == 't') {
+                        ja_achei = true;
+                        pos += 3;
+                        //cout << "entrei out" << endl;
+                    }
+
+            if (dialogo[pos] == 'o' && ja_achei == false)
+                if (pos + 1 < dialogo.size() && dialogo[pos+1] == 'n')
+                    if (pos + 2 < dialogo.size() && dialogo[pos+2] == 'e') {
+                        ja_achei = true;
+                        pos += 3;
+                        //cout << "entrei one" << endl;
+                    }
+
+            if (dialogo[pos] == 'p' && ja_achei == false)
+                if (pos + 1 < dialogo.size() && dialogo[pos+1] == 'u')
+                    if (pos + 2 < dialogo.size() && dialogo[pos+2] == 't')
+                        if (pos + 3 < dialogo.size() && dialogo[pos+3] == 'o')
+                            if (pos + 4 < dialogo.size() && dialogo[pos+4] == 'n') {
+                                ja_achei = true;
+                                pos += 5;
+                                //cout << "entrei puton" << endl;
+                            }
+        }
+        if (ja_achei)
             cout << "YES" << endl;
         else
             cout << "NO" << endl;
