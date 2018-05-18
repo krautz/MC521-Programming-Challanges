@@ -1,2 +1,2 @@
 # Class N6
-sixth Lesson
+Sixth Lesson

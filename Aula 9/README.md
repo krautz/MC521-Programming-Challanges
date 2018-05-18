@@ -1,5 +1,5 @@
 # Class N9
-nineth Lesson, done in group:
+Ninth Lesson, done in group:
 Group:
 Caio Krauthamer
 Pedro Gomes
